@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- 背景: 角丸ダークグレー -->
+  <rect width="64" height="64" rx="10" ry="10" fill="#111111"/>
+
+  <!-- 外枠ライン: 細いグリーン -->
+  <rect x="4" y="4" width="56" height="56" rx="7" ry="7"
+        fill="none" stroke="#00FF9C" stroke-width="1"/>
+
+  <!-- CPU ラベル + バー -->
+  <text x="7" y="17" font-family="monospace" font-size="7" fill="#00FF9C" opacity="0.7">CPU</text>
+  <rect x="22" y="10" width="35" height="5" rx="2" fill="#1a1a1a"/>
+  <rect x="22" y="10" width="22" height="5" rx="2" fill="#00FF9C" opacity="0.85"/>
+
+  <!-- RAM ラベル + バー -->
+  <text x="7" y="28" font-family="monospace" font-size="7" fill="#00FF9C" opacity="0.7">RAM</text>
+  <rect x="22" y="21" width="35" height="5" rx="2" fill="#1a1a1a"/>
+  <rect x="22" y="21" width="15" height="5" rx="2" fill="#00FF9C" opacity="0.85"/>
+
+  <!-- TEMP ラベル + バー -->
+  <text x="7" y="39" font-family="monospace" font-size="7" fill="#00FF9C" opacity="0.7">TMP</text>
+  <rect x="22" y="32" width="35" height="5" rx="2" fill="#1a1a1a"/>
+  <rect x="22" y="32" width="18" height="5" rx="2" fill="#FFD700" opacity="0.85"/>
+
+  <!-- DISK ラベル + バー -->
+  <text x="7" y="50" font-family="monospace" font-size="7" fill="#00FF9C" opacity="0.7">DSK</text>
+  <rect x="22" y="43" width="35" height="5" rx="2" fill="#1a1a1a"/>
+  <rect x="22" y="43" width="26" height="5" rx="2" fill="#00FF9C" opacity="0.85"/>
+
+  <!-- 下部装飾ライン -->
+  <line x1="7" y1="56" x2="57" y2="56" stroke="#00FF9C" stroke-width="0.5" opacity="0.4"/>
+</svg>
