@@ -1,7 +1,18 @@
 # Desktop HUD
 
-CPU・メモリ・温度・ストレージ使用率を、デスクトップ最前面に  
-**文字だけ浮いて見える HUD 風**でリアルタイム表示する軽量モニタリングアプリです。
+軽量なデスクトップHUDで、CPU・メモリ・温度・ストレージ使用率をリアルタイム表示します。
+
+## 🚀 クイックスタート
+
+```bash
+git clone https://github.com/antivartual-cpu/desktop-hud.git
+cd desktop-hud
+bash install.sh
+```
+
+## 📦 ダウンロード
+
+👉 https://github.com/antivartual-cpu/desktop-hud/releases
 
 Ubuntu 系 Linux / Zorin OS 向けに作られています。
 
