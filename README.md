@@ -42,7 +42,12 @@ sudo apt install python3 python3-venv python3-pip libxcb-cursor0
 | `python3` | Python 本体 |
 | `python3-venv` | 仮想環境の作成（install.sh が確認する） |
 | `python3-pip` | pip によるライブラリ管理 |
-| `libxcb-cursor0` | PySide6 が Qt の XCB バックエンドで起動する際に必要。ないと `qt.qpa.plugin: Could not load the Qt platform plugin "xcb"` エラーが出る場合がある |
+| `libxcb-cursor0` | **必須（Qt XCB バックエンド用）**。ないと起動時に `qt.qpa.plugin: Could not load the Qt platform plugin "xcb"` エラーが発生する。install.sh が不足を検出して案内する |
+
+> **注意: `libxcb-cursor0` について**  
+> Ubuntu 22.04 以降の標準インストールには含まれていない場合があります。  
+> install.sh 実行時に自動でチェックし、未インストールの場合は警告を表示します。  
+> 起動時に xcb エラーが出た場合は `sudo apt install -y libxcb-cursor0` を実行してください。
 
 ---
 
@@ -94,6 +99,14 @@ bash install.sh --autostart
 > デスクトップアイコンをダブルクリックすると「信頼されていない…」ダイアログが  
 > 表示される場合があります。「**起動を信頼する（Trust and Launch）**」を選んでください。  
 > 以降は普通にダブルクリックで起動できます。
+
+> **起動時に Qt xcb エラーが出る場合**  
+> `qt.qpa.plugin: Could not load the Qt platform plugin "xcb"` というエラーが出る場合は、  
+> `libxcb-cursor0` が不足しています。次のコマンドで解決できます：
+> ```bash
+> sudo apt install -y libxcb-cursor0
+> ```
+> install.sh は自動でこのパッケージの有無をチェックし、不足時に上記コマンドを案内します。
 
 ---
 

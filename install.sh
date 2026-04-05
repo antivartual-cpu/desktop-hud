@@ -66,6 +66,24 @@ if ! python3 -c "import venv" &>/dev/null; then
     exit 1
 fi
 
+# ── libxcb-cursor0 の確認（Qt XCB plugin 対応） ───────────────────────────────
+# ない環境では PySide6 起動時に
+# "Could not load the Qt platform plugin xcb" エラーが出る
+if dpkg -s libxcb-cursor0 &>/dev/null 2>&1; then
+    info "libxcb-cursor0: インストール済み"
+else
+    warn "libxcb-cursor0 が見つかりません。"
+    warn "このまま続行しますが、初回起動時に次のエラーが出る場合があります:"
+    warn "  qt.qpa.plugin: Could not load the Qt platform plugin \"xcb\""
+    if command -v apt &>/dev/null; then
+        warn "解決するには次のコマンドを実行してください:"
+        warn "  sudo apt install -y libxcb-cursor0"
+    else
+        warn "お使いのパッケージマネージャーで libxcb-cursor0 をインストールしてください。"
+    fi
+    warn "インストール後、再度 install.sh を実行する必要はありません。"
+fi
+
 # ── 仮想環境の作成（既存があればスキップ） ───────────────────────────────────
 if [ ! -d "${VENV_DIR}" ]; then
     info ".venv を作成中..."
