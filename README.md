@@ -9,13 +9,7 @@ Ubuntu 系 Linux / Zorin OS 向けに作られています。
 
 ## スクリーンショット
 
-```
- CPU   12%
- MEM   41%  16GB
- TEMP  52°C
- DISK  33%  240GB
-[通常] [最前面]
-```
+![Desktop HUD](screenshots/screenshot.png)
 
 ---
 
